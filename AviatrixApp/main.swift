@@ -11,9 +11,9 @@ import Foundation
 func gauges(myPlane : Aviatrix) {
     print("Reading the gauges...")
     print(" ")
-//    print("| Running:  | ✅")
+    print("| Running:  | ✅")
     print("| Location:  | \(myPlane.currentLocation)")
-  //  print("| Distance:  | \(myPlane.knownDistances) miles")
+   print("| Distance:  | \(myPlane.knownDestinations()) miles")
 //    print("| Fuel:      | \(myPlane.fuelLevel) gallons")
 //    print("| Max Fuel:  | \(myPlane.maxFuel) gallons")
 //    print("| MPG:       | \(myPlane.milesPerGallon)")

@@ -24,9 +24,11 @@ class Aviatrix {
     }
     
     func flyTo(destination : String) {
+        var knownDestinations = distanceTo(from: currentLocation, target: destination)
         currentLocation = destination
+        totalDistance = totalDistance + knownDistances
     }
-   
+    
     func distanceTo(from: String, target : String) -> Int {
         var data = AviatrixData()
         var from = currentLocation
@@ -42,6 +44,7 @@ class Aviatrix {
         name = userInput
         running = false
         currentLocation = "SLC"
-    }
     
+    }
+   
 }
