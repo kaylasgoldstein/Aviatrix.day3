@@ -10,14 +10,12 @@ import Foundation
 
 class Aviatrix {
     var name: String
-    init(userInput: String) {
-        name = userInput
-    }
-    var running = false
+    var running : Bool
+    var currentLocation : String
     
    
     func start() -> Bool {
-        running = true
+        running = false
         return running
     }
     
@@ -26,16 +24,24 @@ class Aviatrix {
     }
     
     func flyTo(destination : String) {
-        
+        currentLocation = destination
     }
-    
-    func distanceTo(target : String) {
-    
+   
+    func distanceTo(from: String, target : String) -> Int {
+        var data = AviatrixData()
+        var from = currentLocation
+        var distance = data.knownDistances[from]![target]!
+        return distance
     }
     
     func knownDestinations() -> [String] {
-       return ["St. Louis"]
+       return ["St. Louis", "Phoenix", "Denver", "SLC"]
     }
    
+    init(userInput: String) {
+        name = userInput
+        running = false
+        currentLocation = "SLC"
+    }
     
 }
